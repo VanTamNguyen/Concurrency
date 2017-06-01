@@ -1,6 +1,6 @@
 package com.tamco.concurrency;
 
-public class Main {
+public class RaceConditionDemo {
 
 	public static int NUM_ITERATIONS = 10;
 
@@ -36,12 +36,6 @@ public class Main {
 		@Override
 		public void run() {
 			for (int i = 0; i < NUM_ITERATIONS; i++) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-
 				increase();
 			}
 		}
@@ -51,11 +45,6 @@ public class Main {
 		@Override
 		public void run() {
 			for (int i = 0; i < NUM_ITERATIONS; i++) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 				decrease();
 			}
 		}
