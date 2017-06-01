@@ -1,19 +1,16 @@
 package com.tamco.concurrency;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * Created by Tam-CO on 6/1/17.
  */
-public class LockDemo {
+public class TestAndSet {
 
     public static int NUM_ITERATIONS = 10000;
 
     // Sharing resource
     private static int balance = 100;
 
-    private static Lock lock = new ReentrantLock();
+    private static Boolean flag = Boolean.FALSE;
 
     public static void main(String[] args) {
         Thread threadA = new Thread(new IncreaseTask());
@@ -32,22 +29,26 @@ public class LockDemo {
         System.out.println("Balance after 2 threads execution: " + balance);
     }
 
+    private synchronized static boolean testAndSet() {
+        boolean initial = flag.booleanValue();
+        flag = Boolean.TRUE;
+        return initial;
+    }
+
+    private synchronized static void release() {
+        flag = Boolean.FALSE;
+    }
+
     private static void increase() {
-        lock.lock();
-        try {
-            balance++;
-        } finally {
-            lock.unlock();
-        }
+        while (testAndSet()) { ; /* Waiting here */ }
+        balance++;
+        release();
     }
 
     private static void decrease() {
-        lock.lock();
-        try {
-            balance--;
-        } finally {
-            lock.unlock();
-        }
+        while (testAndSet()) { ; /* Waiting here */ }
+        balance--;
+        release();
     }
 
     public static class IncreaseTask implements Runnable {

@@ -2,7 +2,7 @@ package com.tamco.concurrency;
 
 public class RaceConditionDemo {
 
-	public static int NUM_ITERATIONS = 10;
+	public static int NUM_ITERATIONS = 10000;
 
 	// Sharing resource
 	private static int balance = 100;
