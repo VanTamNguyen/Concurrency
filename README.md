@@ -13,3 +13,4 @@ Presentation about basics/fundamental concurrency
 * [MIT 6.005 Course: Concurrency](http://web.mit.edu/6.005/www/fa14/classes/17-concurrency/)
 * [MIT 6.005 Course: Thread-Safety](http://web.mit.edu/6.005/www/fa14/classes/18-thread-safety/)
 * [MIT 6.005 Course: Queues and Locks](http://web.mit.edu/6.005/www/fa14/classes/20-queues-locks/)
+* [Official Oracle Document Threads and Locks](https://docs.oracle.com/javase/specs/jls/se7/html/jls-17.html)
