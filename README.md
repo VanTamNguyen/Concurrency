@@ -1,4 +1,4 @@
-# NTQ-Concurrency
+# Concurrency
 Presentation about concurrency in Java Team
 
 1. Process and thread
