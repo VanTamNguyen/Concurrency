@@ -1,0 +1,11 @@
+{
+    "editor.lineNumbers": "on",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.renderIndentGuides": true,
+    "editor.guides.indentation": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14
+} 

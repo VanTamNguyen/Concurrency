@@ -3,7 +3,9 @@ package com.tamco.concurrency;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerDemo {
+
     public static int NUM_ITERATIONS = 10000;
+
     private static AtomicInteger balance = new AtomicInteger(100);
 
     public static void main(String[] args) {
